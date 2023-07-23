@@ -4,6 +4,7 @@ using LeetCode_ProblemSolving_FirstWeek.Palindrome_Number;
 using LeetCode_ProblemSolving_FirstWeek.RegularExpressionMatching.RegularExpressionAutomaticEngine;
 using LeetCode_ProblemSolving_FirstWeek.Reverse_Integer;
 using LeetCode_ProblemSolving_FirstWeek.Zigzag_Conversion;
+using LeetCode_ProblemSolving_FirstWeek.RegularExpressionMatching;
 using System.Collections;
 
 namespace LeetCode_ProblemSolving_FirstWeek
@@ -33,8 +34,9 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine( zigzagConversion.Convert(s,1));
             //Console.WriteLine( StringToInteger.MyAtoi("-2147483647"));
             //Console.WriteLine(PalindromeNumber.IsPalindrome(5452346));
-            RegAutomaticEngine regEx = new RegAutomaticEngine("ab*c*.cd");
-            Console.WriteLine(regEx.StartAutomaticEngine("ackcd"));
+            //RegAutomaticEngine regEx = new RegAutomaticEngine("ab*c*.cd");
+            //Console.WriteLine(regEx.StartAutomaticEngine("ackcd"));
+            Console.WriteLine(RegularExpression.IsMatch("ackcd", "ab*c*.cd"));
         }
     }
 }
