@@ -1,6 +1,7 @@
 ﻿using LeetCode_ProblemSolving_FirstWeek._1_Longest_Substring;
 using LeetCode_ProblemSolving_FirstWeek._2_palindromic_SubString;
 using LeetCode_ProblemSolving_FirstWeek.Palindrome_Number;
+using LeetCode_ProblemSolving_FirstWeek.RegularExpressionMatching.RegularExpressionAutomaticEngine;
 using LeetCode_ProblemSolving_FirstWeek.Reverse_Integer;
 using LeetCode_ProblemSolving_FirstWeek.Zigzag_Conversion;
 using System.Collections;
@@ -31,7 +32,9 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //string s = "AB";
             //Console.WriteLine( zigzagConversion.Convert(s,1));
             //Console.WriteLine( StringToInteger.MyAtoi("-2147483647"));
-            Console.WriteLine(PalindromeNumber.IsPalindrome(5452346));
+            //Console.WriteLine(PalindromeNumber.IsPalindrome(5452346));
+            RegAutomaticEngine regEx = new RegAutomaticEngine("ab*c*.cd");
+            Console.WriteLine(regEx.StartAutomaticEngine("ackcd"));
         }
     }
 }
