@@ -36,7 +36,10 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine(PalindromeNumber.IsPalindrome(5452346));
             //RegAutomaticEngine regEx = new RegAutomaticEngine("ab*c*.cd");
             //Console.WriteLine(regEx.StartAutomaticEngine("ackcd"));
-            Console.WriteLine(RegularExpression.IsMatch("ackcd", "ab*c*.cd"));
+            //Console.WriteLine(RegularExpression.IsMatch("ackcd", "ab*c*.cd"));
+            //Console.WriteLine(RegularExpression.IsMatch("mississippi", "mis*is*ip*."));
+            Console.WriteLine(RegularExpression.IsMatch("aab", "c*a*b"));
+
         }
     }
 }

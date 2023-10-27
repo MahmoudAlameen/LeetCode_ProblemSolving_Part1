@@ -1,35 +1,54 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace LeetCode_ProblemSolving_FirstWeek.RegularExpressionMatching.RegularExpressionAutomaticEngine
 {
-    /*
- steps of solution:-
- 1- create method for creating RegAutomaticEngine
- 2- create method  that take RegAutomaticEngine and string 
-            return true if string matched false other wise
- RegAutomaticEngine has state and arrows
-each arrow belong to state and directed to specefic state 
-there is base states : -
- start state 
- finite state 
-string should take path from start state and arrive to finite state to be acepted as matched 
-other wise will be considered as not matched 
- */
-    public class RegAutomaticEngine
+    /// <summary>
+    /// 
+    /// Problem:- Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where:
+    /// •	'.' Matches any single character.
+    /// •	'*' Matches zero or more of the preceding element.
+    /// The matching should cover the entire input string (not partial).
+    /// 
+    /// 
+    ///  steps of solution:-
+    ///  1- implement  method for creating State Machine Regular Expression :-  state machine that simulate passed pattern  
+    ///  2- implement method  that take State Machine  and string , pass the string through  state machine 
+    ///             return true if the string chars passed through state machine to finite state ( string match pattern )
+    ///             false other wise
+    ///  State Machine Regular Expression  has states and arrows
+    ///  there is base states : -
+    ///     start state
+    ///     finite state
+    ///  the goal is that the string should take path from start state and arrive  to finite state to be acepted as matched
+    ///  other wise will be considered as not matched
+    ///  each arrow belong to state and directed to specefic state 
+    /// </summary>
+
+    public class RegularExpressionStateMachine
     {
         private string Pattern { get; set; }
         private State StartState { get; set; }
         private State FiniteState { get; set; }
-        public RegAutomaticEngine(string pattern)
+        public RegularExpressionStateMachine(string pattern)
         {
             Pattern = pattern;
-            BuildRegAutomaticEngine();
+            BuildRegularExpressionStateMachine();
         }
-        void BuildRegAutomaticEngine()
+
+        /// <summary>
+        /// output of this method is generated  state machine start from start state and end with finite state 
+        /// this generated state machine simulate the passed pattern 
+        /// </summary>
+        void BuildRegularExpressionStateMachine()
         {
             StartState = new State('S', new List<TransferPath> { new TransferPath(StartState) });
             FiniteState = new State('F');
@@ -51,7 +70,7 @@ other wise will be considered as not matched
                 else
                 {
                     var newelyCreatedPaths = AddTransferPath(backPaths.Select(p => p.SourceState).ToList(), null);
-                    newState.TransferPaths.Add(new TransferPath(newState, newState));
+                    newState.TransferPaths.Insert(0,new TransferPath(newState, newState));
                     backPaths.Clear();
                     backPaths.AddRange(newelyCreatedPaths);
                     backPaths.Add(newStatePath);
@@ -61,33 +80,51 @@ other wise will be considered as not matched
             foreach (var path in backPaths)
                 path.DestinationState = FiniteState;
         }
-        public bool StartAutomaticEngine(string s)
+        public bool StartRegExAutomaticEngine(string s)
         {
-            State CurrentState = StartState;
-            bool charIsMatched = false;
-            for(int index = 0; index < s.Length; index++)
+           return IfStateHasAnyValidPaths(this.StartState, s, 0);
+        }
+
+        /// <summary>
+        /// take the string and pass it through created stateMachine (RegAutomaticEngine) for checking that this string 
+        /// is matched with pattern or not 
+        /// </summary>
+        /// <param name="startState"></param>
+        /// <param name="word"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        private bool IfStateHasAnyValidPaths(State startState, string  word, int wordIndex)
+        {
+            foreach(var path in startState.TransferPaths)
             {
-                var currentChar = s[index];
-                charIsMatched = false;
-                foreach (var transferPath in CurrentState.TransferPaths)
+                // if we in last char n word
+                if (wordIndex > word.Length - 1)
                 {
-                    if (transferPath.DestinationState.Letter == currentChar || transferPath.DestinationState.Letter == '.')
-                    {
-                        CurrentState = transferPath.DestinationState;
-                        charIsMatched = true;
-                        break;
-                    }
+                    // if destination state of path is FiniteState and all word characters passed then word is matched 
+                    if (path.DestinationState == FiniteState)
+                        return true;
+                    // if destination state of path is not finite state and word characters passed then we  go through all word characters
+                    // and word is not matched
+                    else
+                        continue;
                 }
-                if(!charIsMatched)
-                    return false;
+                var destLetter = path.DestinationState.Letter;
+                var wordIndexedLetter = word[wordIndex];
+
+                if (destLetter != '.' && destLetter != wordIndexedLetter)
+                    continue;
+
+                if(IfStateHasAnyValidPaths(path.DestinationState, word, wordIndex+1))
+                    return true;
             }
-            return CurrentState.TransferPaths.Any(p => p.DestinationState == FiniteState); 
+            return false;
         }
         // check that current letter is folowed by (*) or not 
         bool IsLetterFollowedByAstrec(string pattern, int index)
         {
             return index < pattern.Length - 1 && pattern[index + 1] == '*';
         }
+        // linking state to state machine 
         void LinkStateToEngine(List<TransferPath> backPaths, State state)
         {
             foreach(var transferPath in backPaths)
@@ -95,6 +132,12 @@ other wise will be considered as not matched
                 transferPath.DestinationState = state;
             }
         }
+       /// <summary>
+       /// linking transition (transfer path) to state machine
+       /// </summary>
+       /// <param name="sourceStates"></param>
+       /// <param name="destinationState"></param>
+       /// <returns></returns>
         List<TransferPath> AddTransferPath(List<State> sourceStates, State destinationState)
         {
             List<TransferPath> newelyCreatedPaths = new List<TransferPath>();

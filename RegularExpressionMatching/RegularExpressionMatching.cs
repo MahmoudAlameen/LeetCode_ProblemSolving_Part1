@@ -14,8 +14,9 @@ namespace LeetCode_ProblemSolving_FirstWeek.RegularExpressionMatching
     {
         public  static bool IsMatch(string s, string p)
         {
-            RegAutomaticEngine regExEngine = new RegAutomaticEngine(p);
-            return regExEngine.StartAutomaticEngine(s);
+            RegularExpressionStateMachine regExEngine = new RegularExpressionStateMachine(p);
+            return regExEngine.StartRegExAutomaticEngine(s);
         }
     }
+   
 }
