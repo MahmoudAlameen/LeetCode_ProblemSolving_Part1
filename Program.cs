@@ -6,6 +6,7 @@ using LeetCode_ProblemSolving_FirstWeek.Reverse_Integer;
 using LeetCode_ProblemSolving_FirstWeek.Zigzag_Conversion;
 using LeetCode_ProblemSolving_FirstWeek.RegularExpressionMatching;
 using System.Collections;
+using LeetCode_ProblemSolving_FirstWeek.Roman_To_Integer;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -38,8 +39,8 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine(regEx.StartAutomaticEngine("ackcd"));
             //Console.WriteLine(RegularExpression.IsMatch("ackcd", "ab*c*.cd"));
             //Console.WriteLine(RegularExpression.IsMatch("mississippi", "mis*is*ip*."));
-            Console.WriteLine(RegularExpression.IsMatch("aab", "c*a*b"));
-
+            //Console.WriteLine(RegularExpression.IsMatch("aab", "c*a*b"));
+            Console.WriteLine(RomanToInteger.RomanToInt("MCMXCIV"));
         }
     }
 }
