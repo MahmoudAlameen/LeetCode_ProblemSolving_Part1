@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode_ProblemSolving_FirstWeek.Remove_Nth_Node_From_End_of_List
+namespace LeetCode_ProblemSolving_FirstWeek.LinkedList
 {
     public class RemovenNodeFromEnd
     {
@@ -18,37 +18,27 @@ namespace LeetCode_ProblemSolving_FirstWeek.Remove_Nth_Node_From_End_of_List
                 if (listNode.next == null)
                     break;
                 nodesCount++;
-                listNode = listNode.next;   
+                listNode = listNode.next;
             }
             if (nodesCount == n)
                 return head.next;
 
-            int targetNodeIndex = nodesCount - n-1;
+            int targetNodeIndex = nodesCount - n - 1;
             if (targetNodeIndex < 0)
                 return null;
             var leftNode = head;
             while (targetNodeIndex > 0)
             {
                 targetNodeIndex--;
-                leftNode = leftNode.next;             
+                leftNode = leftNode.next;
             }
             var rightNode = leftNode.next;
-            if( rightNode != null)
+            if (rightNode != null)
                 rightNode = rightNode.next;
 
             leftNode.next = rightNode;
             return head;
 
-        }
-    }
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
         }
     }
 }

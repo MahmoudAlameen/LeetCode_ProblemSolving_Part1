@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode_ProblemSolving_FirstWeek
+namespace LeetCode_ProblemSolving_FirstWeek.Search
 {
     public static class Search
     {

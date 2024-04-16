@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeetCode_ProblemSolving_FirstWeek.Remove_Duplicates_from_Sorted_Array
+namespace LeetCode_ProblemSolving_FirstWeek.Arrays
 {
-    public static  class Arrays
+    public static class Arrays
     {
         public static int RemoveDuplicates(int[] nums)
         {
             int lastUniqueIndex = 0;
             int positionToBeSet = 0;
             int jchecked = 1;
-            for(int i=1 ; i < nums.Length; i++) 
+            for (int i = 1; i < nums.Length; i++)
             {
                 positionToBeSet = i;
 
-                for(int j =jchecked; j < nums.Length; j++)
+                for (int j = jchecked; j < nums.Length; j++)
                 {
                     if (nums[j] > nums[lastUniqueIndex])
                     {
-                        Swap(nums, j,  positionToBeSet);
-                        lastUniqueIndex = i ;
+                        Swap(nums, j, positionToBeSet);
+                        lastUniqueIndex = i;
                         jchecked = j;
                         break;
                     }
@@ -41,7 +41,7 @@ namespace LeetCode_ProblemSolving_FirstWeek.Remove_Duplicates_from_Sorted_Array
 
         public static int RemoveElement(int[] nums, int val)
         {
-            int lastValid = nums.Length-1;
+            int lastValid = nums.Length - 1;
             int k = 0;
             for (int i = 0; i <= lastValid; i++)
             {
@@ -57,13 +57,13 @@ namespace LeetCode_ProblemSolving_FirstWeek.Remove_Duplicates_from_Sorted_Array
             return k;
 
         }
-        public static  int IndexOfTheFirstOccurence(string haystack, string needle)
+        public static int IndexOfTheFirstOccurence(string haystack, string needle)
         {
             int needleIndex = 0;
-            for(int i=0; i< haystack.Length; i++)
+            for (int i = 0; i < haystack.Length; i++)
             {
-                if (haystack[i] == needle[needleIndex] && needleIndex == needle.Length-1)
-                { 
+                if (haystack[i] == needle[needleIndex] && needleIndex == needle.Length - 1)
+                {
                     return i - needleIndex;
                 }
                 if (haystack[i] == needle[needleIndex])
@@ -85,25 +85,25 @@ namespace LeetCode_ProblemSolving_FirstWeek.Remove_Duplicates_from_Sorted_Array
             return SearchInRotatedArray(nums, target, 0, nums.Length - 1);
         }
 
-        private static  int SearchInRotatedArray(int[] nums, int target, int left , int right)
+        private static int SearchInRotatedArray(int[] nums, int target, int left, int right)
         {
             if (left > right)
                 return -1;
             var isTargetExistsInTheLeft = IsExistsInTheLeft(nums, target);
-            var mid = (left + right +1) / 2;
+            var mid = (left + right + 1) / 2;
             if (target == nums[mid])
                 return mid;
             if (isTargetExistsInTheLeft)
             {
                 if (nums[mid] > target)
                 {
-                   return SearchInRotatedArray(nums, target, left, mid - 1);
+                    return SearchInRotatedArray(nums, target, left, mid - 1);
                 }
                 else
                 {
                     if (IsExistsInTheLeft(nums, nums[mid]))
                     {
-                       return  SearchInRotatedArray(nums, target, mid + 1, right);
+                        return SearchInRotatedArray(nums, target, mid + 1, right);
                     }
                     else
                     {
@@ -111,7 +111,7 @@ namespace LeetCode_ProblemSolving_FirstWeek.Remove_Duplicates_from_Sorted_Array
                     }
                 }
             }
-            else 
+            else
             {
                 if (nums[mid] < target)
                 {
@@ -125,7 +125,7 @@ namespace LeetCode_ProblemSolving_FirstWeek.Remove_Duplicates_from_Sorted_Array
                     }
                     else
                     {
-                       return SearchInRotatedArray(nums, target, left, mid - 1);
+                        return SearchInRotatedArray(nums, target, left, mid - 1);
                     }
                 }
             }
