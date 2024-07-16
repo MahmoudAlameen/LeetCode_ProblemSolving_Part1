@@ -13,6 +13,7 @@ using LeetCode_ProblemSolving_FirstWeek._3Sums;
 using LeetCode_ProblemSolving_FirstWeek._3SumsClosest;
 using LeetCode_ProblemSolving_FirstWeek.Valid_Parentheses;
 using LeetCode_ProblemSolving_FirstWeek.Letter_Combinations_of_a_Phone_Number;
+using LeetCode_ProblemSolving_FirstWeek.CountAndSay;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -69,12 +70,13 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //var result  = LetterCompinationPhoneNumber.LetterCombinations("");
             //foreach(var item in result)
             //    Console.WriteLine(item);    
-            string text1 = null;
-            string text2 = null;
-            string result = text1 + " ";
+            //string text1 = null;
+            //string text2 = null;
+            //string result = text1 + " ";
 
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
 
+            Console.WriteLine(CountAndSayAlgorithm.CountAndSayRun(3));
         }
       
 
