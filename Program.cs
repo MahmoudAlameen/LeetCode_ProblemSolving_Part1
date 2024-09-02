@@ -14,6 +14,8 @@ using LeetCode_ProblemSolving_FirstWeek._3SumsClosest;
 using LeetCode_ProblemSolving_FirstWeek.Valid_Parentheses;
 using LeetCode_ProblemSolving_FirstWeek.Letter_Combinations_of_a_Phone_Number;
 using LeetCode_ProblemSolving_FirstWeek.CountAndSay;
+using LeetCode_ProblemSolving_FirstWeek.CompinationSum;
+using LeetCode_ProblemSolving_FirstWeek.MultiplyStrings;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -76,7 +78,22 @@ namespace LeetCode_ProblemSolving_FirstWeek
 
             //Console.WriteLine(result);
 
-            Console.WriteLine(CountAndSayAlgorithm.CountAndSayRun(3));
+            //Console.WriteLine(CountAndSayAlgorithm.CountAndSayRun(3));
+
+            //var list = CompinationSumProblem.CombinationSum(new int[] { 8,7,4,3}, 11);
+            //var list = CompinationSumProblem.CompinationSum2(new int[] {3,1,3,5,1,1}, 8);
+            //foreach (var item in list)
+            //{
+            //    foreach (var x in item)
+            //    {
+            //        Console.Write(x + "  ");   
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            string num1 = "401716832807512840963";
+            string num2 = "167141802233061013023557397451289113296441069";
+            Console.WriteLine(MultiplyStrings.MultiplyStrings.Multiply(num1, num2));
         }
       
 
