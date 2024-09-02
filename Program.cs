@@ -16,6 +16,7 @@ using LeetCode_ProblemSolving_FirstWeek.Letter_Combinations_of_a_Phone_Number;
 using LeetCode_ProblemSolving_FirstWeek.CountAndSay;
 using LeetCode_ProblemSolving_FirstWeek.CompinationSum;
 using LeetCode_ProblemSolving_FirstWeek.MultiplyStrings;
+using LeetCode_ProblemSolving_FirstWeek.JumpGames;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -91,9 +92,13 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //    Console.WriteLine();
             //}
 
-            string num1 = "401716832807512840963";
-            string num2 = "167141802233061013023557397451289113296441069";
-            Console.WriteLine(MultiplyStrings.MultiplyStrings.Multiply(num1, num2));
+            //string num1 = "401716832807512840963";
+            //string num2 = "167141802233061013023557397451289113296441069";
+            //Console.WriteLine(MultiplyStrings.MultiplyStrings.Multiply(num1, num2));
+
+            /* test jump games problem **/
+            int[] nums = new int[] { 2, 3, 1, 1, 4 };
+            Console.Write(JumGames2.Jump(nums));
         }
       
 
