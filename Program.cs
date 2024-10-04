@@ -17,6 +17,7 @@ using LeetCode_ProblemSolving_FirstWeek.CountAndSay;
 using LeetCode_ProblemSolving_FirstWeek.CompinationSum;
 using LeetCode_ProblemSolving_FirstWeek.MultiplyStrings;
 using LeetCode_ProblemSolving_FirstWeek.JumpGames;
+using LeetCode_ProblemSolving_FirstWeek.Arrays;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -97,8 +98,11 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine(MultiplyStrings.MultiplyStrings.Multiply(num1, num2));
 
             /* test jump games problem **/
-            int[] nums = new int[] { 2, 3, 1, 1, 4 };
-            Console.Write(JumGames2.Jump(nums));
+            //int[] nums = new int[] { 2, 3, 1, 1, 4 };
+            //Console.Write(JumGames2.Jump(nums));
+            int[][] matrix = new int[][] {new int [] {5, 1, 9, 11}, new int[] {2, 4, 8, 10}, new int [] {13, 3, 6, 7}, new int []{15, 14, 12, 16}};
+            Rotate rotation = new Rotate();
+            rotation.Rotates(matrix);
         }
       
 
