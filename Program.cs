@@ -18,6 +18,7 @@ using LeetCode_ProblemSolving_FirstWeek.CompinationSum;
 using LeetCode_ProblemSolving_FirstWeek.MultiplyStrings;
 using LeetCode_ProblemSolving_FirstWeek.JumpGames;
 using LeetCode_ProblemSolving_FirstWeek.Arrays;
+using LeetCode_ProblemSolving_FirstWeek.Math0;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -107,7 +108,11 @@ namespace LeetCode_ProblemSolving_FirstWeek
             // GroupAnagram.GroupAnagrams(new string[] { "bdddddddddd", "bbbbbbbbbbc" });
 
             //Console.WriteLine(GroupAnagram.GetStrAssicSum("duh"));
-            Permutation.Permute(new int[] {1,2,3 });
+            // Permutation.Permute(new int[] {1,2,3 });
+
+            // Console.WriteLine(Power.MyPow(2.00000, -2));
+            Console.WriteLine(Power.FastPowRun(1.0000, -2147483648));
+
         }
 
 
