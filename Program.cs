@@ -108,7 +108,7 @@ namespace LeetCode_ProblemSolving_FirstWeek
             // GroupAnagram.GroupAnagrams(new string[] { "bdddddddddd", "bbbbbbbbbbc" });
 
             //Console.WriteLine(GroupAnagram.GetStrAssicSum("duh"));
-            Permutation.PermuteUsingBackTrackAlgorithm(new int[] {1,2,3 });
+            Permutation2.PermuteUniqueUsingBackTrackAlgorithm(new int[] {1,2,3 });
 
             // Console.WriteLine(Power.MyPow(2.00000, -2));
            //Console.WriteLine(Power.FastPowRun(1.0000, -2147483648));

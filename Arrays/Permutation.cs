@@ -32,6 +32,7 @@ namespace LeetCode_ProblemSolving_FirstWeek.Arrays
             return permutations[permutations.Count - 1];    
         }
 
+
         public static IList<IList<int>> Result = new List<IList<int>>(); 
         public static IList<IList<int>> PermuteUsingBackTrackAlgorithm(int[] nums)
         {
