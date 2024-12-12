@@ -63,5 +63,31 @@ namespace LeetCode_ProblemSolving_FirstWeek.Valid_Parentheses
                 return true;
             return false;
         }
+
+
+
+        // get minmum insertion required for balance paranthises 
+        // paranthises is '(' , ')' only
+        public static int MinInsertionRequired(string s)
+        {
+            int open = 0 , closed = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '(')
+                    open++;
+
+                if (s[i] == ')')
+                {
+                    if (open > 0)
+                        open--;
+                    else
+                        closed++;
+                }
+
+            }
+            return open + closed;
+            
+        }
     }
 }

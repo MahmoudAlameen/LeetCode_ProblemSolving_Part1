@@ -27,5 +27,24 @@ namespace LeetCode_ProblemSolving_FirstWeek.Palindrome_Number
                 return false;
 
         }
+
+        public static string BreakDownPalindorm(string palindrom)
+        {
+            StringBuilder s = new StringBuilder(palindrom);
+            int palindromSize = palindrom.Length;
+            if (palindromSize == 1)
+                return "IMMPOSSIBLE";
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (palindrom[i] != 'a')
+                {
+                    s[i] = 'a';
+                    return s.ToString();
+                }
+                    
+            }
+            return "IMMPOSSIBLE";
+        }
     }
 }

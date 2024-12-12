@@ -20,6 +20,8 @@ using LeetCode_ProblemSolving_FirstWeek.JumpGames;
 using LeetCode_ProblemSolving_FirstWeek.Arrays;
 using LeetCode_ProblemSolving_FirstWeek.Math0;
 using LeetCode_ProblemSolving_FirstWeek.Integer_To_Roman;
+using LeetCode_ProblemSolving_FirstWeek._4Sum;
+using LeetCode_ProblemSolving_FirstWeek.Binary;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -113,8 +115,19 @@ namespace LeetCode_ProblemSolving_FirstWeek
             // Console.WriteLine(Power.MyPow(2.00000, -2));
             //Console.WriteLine(Power.FastPowRun(1.0000, -2147483648));
 
-            RomanSymbolsManpulation romanSymbolsManpulation = new RomanSymbolsManpulation();
-            romanSymbolsManpulation.IntToRoman(3009);
+            //RomanSymbolsManpulation romanSymbolsManpulation = new RomanSymbolsManpulation();
+            //romanSymbolsManpulation.IntToRoman(3009);
+
+            //FourSums fourSums = new FourSums();
+            //ForSumUsingDynamicProgramming fourSums = new ForSumUsingDynamicProgramming();   
+            //fourSums.FourSum(new int[] {1, 0, -1, 0, -2, 2}, 0);
+
+            //Console.WriteLine(ValidParentheses.MinInsertionRequired("))(())"));
+            Rotate rotate = new Rotate();
+             int[][] matrix = new int[][] {new int [] {1,0 ,0}, new int[] {0 , 1, 1}, new int [] {13, 3, 6, 7}, new int []{0, 0 , 1}};
+
+            rotate.Rotates(matrix);
+
 
         }
 
