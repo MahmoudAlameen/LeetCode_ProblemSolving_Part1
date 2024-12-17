@@ -27,7 +27,7 @@ namespace LeetCode_ProblemSolving_FirstWeek
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
             //  Console.WriteLine("Hello, World!");
             //  CircularQueue q = new CircularQueue(5);
@@ -123,12 +123,24 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //fourSums.FourSum(new int[] {1, 0, -1, 0, -2, 2}, 0);
 
             //Console.WriteLine(ValidParentheses.MinInsertionRequired("))(())"));
-            Rotate rotate = new Rotate();
-             int[][] matrix = new int[][] {new int [] {1,0 ,0}, new int[] {0 , 1, 1}, new int [] {13, 3, 6, 7}, new int []{0, 0 , 1}};
+            //MaximumSub maximumSub = new MaximumSub();
+            //Console.WriteLine (maximumSub.MaxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+            var itemsNums =  TestYeildKeyWork(new List<int> {1,2,3,4,5,6 });
 
-            rotate.Rotates(matrix);
+            foreach (var item in itemsNums)
+            {
+                Console.WriteLine(item);    
+            }
 
 
+        }
+
+        public  static IEnumerable<int> TestYeildKeyWork(List<int> nums)
+        {
+            foreach (var item in nums)
+            {
+                yield return item; 
+            }
         }
 
 
