@@ -125,12 +125,16 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine(ValidParentheses.MinInsertionRequired("))(())"));
             //MaximumSub maximumSub = new MaximumSub();
             //Console.WriteLine (maximumSub.MaxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
-            var itemsNums =  TestYeildKeyWork(new List<int> {1,2,3,4,5,6 });
+            //var itemsNums =  TestYeildKeyWork(new List<int> {1,2,3,4,5,6 });
 
-            foreach (var item in itemsNums)
-            {
-                Console.WriteLine(item);    
-            }
+            //foreach (var item in itemsNums)
+            //{
+            //    Console.WriteLine(item);    
+            //}
+            MergeIntervals intervals = new MergeIntervals();
+            intervals.Merge(new int[][] { new int[] {1,3}, new int[] {2, 6}, new int[] { 8, 10} , new int[] { 15, 18} });
+            intervals.Merge(new int[][] { new int[] { 1, 4}, new int[] { 0,1});
+
 
 
         }
