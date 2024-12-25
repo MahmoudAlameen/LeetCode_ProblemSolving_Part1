@@ -131,9 +131,14 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //{
             //    Console.WriteLine(item);    
             //}
-            MergeIntervals intervals = new MergeIntervals();
-            intervals.Merge(new int[][] { new int[] {1,3}, new int[] {2, 6}, new int[] { 8, 10} , new int[] { 15, 18} });
-            intervals.Merge(new int[][] { new int[] { 1, 4}, new int[] { 0,1});
+            //MergeIntervals intervals = new MergeIntervals();
+            //intervals.Merge(new int[][] { new int[] {1,3}, new int[] {2, 6}, new int[] { 8, 10} , new int[] { 15, 18} });
+            //intervals.Merge(new int[][] { new int[] { 1, 4 }, new int[] { 0, 1 } });
+            //InsertIntervals intervals = new InsertIntervals();
+            //intervals.Insert(new int[][] { new int[] { 1, 3 }, new int[] { 6, 9 }}, new int[] { 2, 5 });
+
+            SpiralMatrix2  spiralMatrix = new SpiralMatrix2();
+            var matrix = spiralMatrix.GenerateMatrix(3);
 
 
 
