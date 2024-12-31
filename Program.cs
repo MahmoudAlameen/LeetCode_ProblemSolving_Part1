@@ -22,6 +22,7 @@ using LeetCode_ProblemSolving_FirstWeek.Math0;
 using LeetCode_ProblemSolving_FirstWeek.Integer_To_Roman;
 using LeetCode_ProblemSolving_FirstWeek._4Sum;
 using LeetCode_ProblemSolving_FirstWeek.Binary;
+using LeetCode_ProblemSolving_FirstWeek.Unique_Path;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -137,8 +138,11 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //InsertIntervals intervals = new InsertIntervals();
             //intervals.Insert(new int[][] { new int[] { 1, 3 }, new int[] { 6, 9 }}, new int[] { 2, 5 });
 
-            SpiralMatrix2  spiralMatrix = new SpiralMatrix2();
-            var matrix = spiralMatrix.GenerateMatrix(3);
+            //SpiralMatrix2  spiralMatrix = new SpiralMatrix2();
+            //var matrix = spiralMatrix.GenerateMatrix(3);
+            UniquePath uniquePath = new UniquePath();
+            Console.WriteLine(uniquePath.UniquePathsWithObstacles(new int[2][]
+                {new int []  { 0 ,0}, new int[] {0, 1 } }));
 
 
 
