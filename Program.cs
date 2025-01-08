@@ -141,10 +141,11 @@ namespace LeetCode_ProblemSolving_FirstWeek
 
             //SpiralMatrix2  spiralMatrix = new SpiralMatrix2();
             //var matrix = spiralMatrix.GenerateMatrix(3);
-            MinimumPath minimumPath = new MinimumPath();
-            Console.WriteLine(minimumPath.MinPathSum(new int[][]
-                {
-                    new int [] { 4 } }));
+            //MinimumPath minimumPath = new MinimumPath();
+            //Console.WriteLine(minimumPath.MinPathSum(new int[][]
+            //    {
+            //        new int [] { 4 } }));
+            Console.WriteLine(Math0.Power.MySqrt(325));
 
 
 

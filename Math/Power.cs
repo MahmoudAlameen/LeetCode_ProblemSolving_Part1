@@ -44,7 +44,7 @@ namespace LeetCode_ProblemSolving_FirstWeek.Math0
         {
             if (n < 1)
                 return result;
-            return Pow(baseNum, result * baseNum, n-1);    
+            return Pow(baseNum, result * baseNum, n - 1);
         }
         public static double FastPowRun(double x, int n)
         {
@@ -69,7 +69,29 @@ namespace LeetCode_ProblemSolving_FirstWeek.Math0
                 return x * x;
             if (n % 2 == 0)
                 return FastPow(FastPow(x, n / 2), 2);
-            return x * FastPow(FastPow(x, n/2), 2);
+            return x * FastPow(FastPow(x, n / 2), 2);
         }
+        public static int MySqrt(int x)
+        {
+            int left = 0;
+            int right = x / 2 + 1;
+            int potentialSqrt = right;
+            MySqrtUsingBinarySearch(x, left, right, ref potentialSqrt);
+            return potentialSqrt;
+        }
+        public static void MySqrtUsingBinarySearch(int x, int left, int right, ref int potentialSqrt)
+        {
+            if (right < left)
+                return;
+            int mid = left + ((right - left) / 2);
+            if ((long)mid * (long)mid <= x)
+            {
+                potentialSqrt = mid;
+                MySqrtUsingBinarySearch(x, mid + 1, right, ref potentialSqrt);
+            }
+            else
+                MySqrtUsingBinarySearch(x, left, mid - 1, ref potentialSqrt);
+        }
+
     }
 }
