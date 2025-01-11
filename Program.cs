@@ -145,9 +145,8 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine(minimumPath.MinPathSum(new int[][]
             //    {
             //        new int [] { 4 } }));
-            Console.WriteLine(Math0.Power.MySqrt(325));
-
-
+            //Console.WriteLine(Math0.Power.MySqrt(325));
+            Console.WriteLine(SimplifiedPath.SimplifiedPath.SimplifyPath("/../"));
 
         }
 
