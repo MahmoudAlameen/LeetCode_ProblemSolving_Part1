@@ -146,7 +146,9 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //    {
             //        new int [] { 4 } }));
             //Console.WriteLine(Math0.Power.MySqrt(325));
-            Console.WriteLine(SimplifiedPath.SimplifiedPath.SimplifyPath("/../"));
+            //Console.WriteLine(SimplifiedPath.SimplifiedPath.SimplifyPath("/../"));
+            Edit_Distance.EditDistance editDistance = new Edit_Distance.EditDistance();
+            Console.WriteLine(editDistance.MinDistance("intention", "execution"));
 
         }
 
