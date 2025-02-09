@@ -10,6 +10,7 @@ namespace LeetCode_ProblemSolving_FirstWeek.Arrays
     {
         public void SortColors(int[] nums)
         {
+
             int zeros = 0, ones = 0, twos = 0;
             for (int i = 0; i < nums.Length; i++)
             {
