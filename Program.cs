@@ -24,6 +24,7 @@ using LeetCode_ProblemSolving_FirstWeek._4Sum;
 using LeetCode_ProblemSolving_FirstWeek.Binary;
 using LeetCode_ProblemSolving_FirstWeek.Unique_Path;
 using LeetCode_ProblemSolving_FirstWeek.PathsProblems;
+using LeetCode_ProblemSolving_FirstWeek.Compinations;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -147,8 +148,12 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //        new int [] { 4 } }));
             //Console.WriteLine(Math0.Power.MySqrt(325));
             //Console.WriteLine(SimplifiedPath.SimplifiedPath.SimplifyPath("/../"));
-            Edit_Distance.EditDistance editDistance = new Edit_Distance.EditDistance();
-            Console.WriteLine(editDistance.MinDistance("intention", "execution"));
+            //Edit_Distance.EditDistance editDistance = new Edit_Distance.EditDistance();
+            //Console.WriteLine(editDistance.MinDistance("intention", "execution"));
+            //Compinations.Compinations compinations = new Compinations.Compinations();
+            //compinations.Combine(4, 2);
+            SubSet subset = new SubSet();
+            subset.Subsets(new int[] {1,2,3});
 
         }
 
