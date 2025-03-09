@@ -25,6 +25,7 @@ using LeetCode_ProblemSolving_FirstWeek.Binary;
 using LeetCode_ProblemSolving_FirstWeek.Unique_Path;
 using LeetCode_ProblemSolving_FirstWeek.PathsProblems;
 using LeetCode_ProblemSolving_FirstWeek.Compinations;
+using LeetCode_ProblemSolving_FirstWeek.Search;
 
 namespace LeetCode_ProblemSolving_FirstWeek
 {
@@ -152,8 +153,10 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //Console.WriteLine(editDistance.MinDistance("intention", "execution"));
             //Compinations.Compinations compinations = new Compinations.Compinations();
             //compinations.Combine(4, 2);
-            SubSet subset = new SubSet();
-            subset.Subsets(new int[] {1,2,3});
+            //SubSet subset = new SubSet();
+            //subset.Subsets(new int[] {1,2,3});
+            WordSearch wordSearch = new WordSearch();
+            Console.WriteLine(wordSearch.Exist(new char[1][] { new char[] { 'a', 'b' } }, "ba"));
 
         }
 
