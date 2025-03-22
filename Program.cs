@@ -155,8 +155,10 @@ namespace LeetCode_ProblemSolving_FirstWeek
             //compinations.Combine(4, 2);
             //SubSet subset = new SubSet();
             //subset.Subsets(new int[] {1,2,3});
-            WordSearch wordSearch = new WordSearch();
-            Console.WriteLine(wordSearch.Exist(new char[1][] { new char[] { 'a', 'b' } }, "ba"));
+            //WordSearch wordSearch = new WordSearch();
+            //Console.WriteLine(wordSearch.Exist(new char[1][] { new char[] { 'a', 'b' } }, "ba"));
+            SortedArray sortedArray = new SortedArray();
+            sortedArray.Merge(new int[] { 1, 2, 3, 0, 0, 0 }, 3, new int[] { 2, 5, 6 }, 3);
 
         }
 
